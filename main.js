@@ -91,7 +91,7 @@ viewonsale();
   ourRequest.onload=function(){
     var ourData=JSON.parse(ourRequest.responseText)
     var testString="";
-  for( i=0; i<5;i++){
+  for( i=0; i<ourData.length;i++){
 
 
         if(ourData[i].popularity=='high'){
@@ -115,7 +115,7 @@ function viewonsale(){
   ourRequest.onload=function(){
     var ourData=JSON.parse(ourRequest.responseText)
     var testString="";
-  for( i=0; i<5;i++){
+  for( i=0; i<ourData.length;i++){
 
 
         if(ourData[i].onsale=='yes'){
