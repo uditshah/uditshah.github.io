@@ -30,14 +30,13 @@ var qty=document.getElementsByName(id)[0].value;
 
   var cartitem = JSON.parse(localStorage.Cartitems);
 for (var i = 0; i < cartitem.length; i++) {
-   if(id == cartitem[i].wineId){  //look for match with name
-       cartitem[i].qty =qty ;  //add two
-       break;  //exit loop since you found the person
+   if(id == cartitem[i].wineId){
+       cartitem[i].qty =qty ;
+       break;
    }
 }
 localStorage.setItem("Cartitems", JSON.stringify(cartitem));
-viewqty();
-viewtotal();
+location.reload();
 }
 
 
@@ -66,7 +65,7 @@ function viewqty(){
 var testString=0;
   for( i=0; i<ourData.length;i++){
     subtotal=ourData[i].qty;
-    testString=testString+subtotal;
+    testString= +testString + +subtotal;
 }
 document.getElementById('scart').innerHTML=""+testString;
 }
